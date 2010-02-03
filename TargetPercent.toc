@@ -1,0 +1,9 @@
+## Interface: 30300
+## Version: 1.0
+## Title: TargetPercent
+## Notes: Adds a health percentage to the Blizzard target frame.
+## Author: Funkydude
+## X-Category: Unit Frames
+## X-License: All Rights Reserved
+
+TargetPercent.lua

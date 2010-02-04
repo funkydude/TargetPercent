@@ -1,12 +1,12 @@
 
 do
 	local showFrame = CreateFrame("Frame", "TargetPercent", TargetFrameHealthBar)
-	showFrame:SetPoint("LEFT", TargetFrameHealthBar, "LEFT", -40, 2)
+	showFrame:SetPoint("LEFT", TargetFrameHealthBar, "LEFT", -40, 0)
 	showFrame:SetWidth(40)
 	showFrame:SetHeight(20)
 	showFrame.text = showFrame:CreateFontString("TargetPercentText", "OVERLAY")
 	showFrame.text:SetAllPoints(showFrame)
-	showFrame.text:SetFont("Fonts\\FRIZQT__.TTF", 11)
+	showFrame.text:SetFontObject(TextStatusBarText)
 	showFrame.text:SetJustifyH("CENTER")
 	showFrame:RegisterEvent("PLAYER_TARGET_CHANGED")
 	showFrame:RegisterEvent("UNIT_HEALTH")

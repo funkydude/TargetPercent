@@ -16,6 +16,8 @@ do
 		if hp > 0 then
 			hp = hp / UnitHealthMax("target") * 100
 			frame.text:SetFormattedText("%d%%", hp)
+		else
+			frame.text:SetText("0%")
 		end
 	end)
 end

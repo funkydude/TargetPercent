@@ -1,5 +1,5 @@
 ## Interface: 30300
-## Version: 1.1
+## Version: 1.2
 ## Title: TargetPercent
 ## Notes: Adds a health percentage to the Blizzard target frame.
 ## Author: Funkydude

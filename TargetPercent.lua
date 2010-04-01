@@ -35,7 +35,6 @@ do
 	f_hpFrame:SetScript("OnEvent", function(frame, _, unit)
 		if unit and not UnitIsUnit(unit, "focus") then return end
 		local hp = UnitHealth("focus")
-		print"update"
 		if hp > 0 then
 			hp = hp / UnitHealthMax("focus") * 100
 			frame.text:SetFormattedText("%.1f%%", hp)

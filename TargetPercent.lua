@@ -1,4 +1,7 @@
 
+local registerOnShow = function(frame) frame:RegisterEvent("UNIT_HEALTH") end
+local unregisterOnHide = function(frame) frame:UnregisterEvent("UNIT_HEALTH") end
+
 do
 	local t_hpFrame = CreateFrame("Frame", "TargetPercent", TargetFrameHealthBar)
 	t_hpFrame:SetPoint("LEFT", TargetFrameHealthBar, "LEFT", -46, 0)
@@ -9,7 +12,8 @@ do
 	t_hpFrame.text:SetFontObject(TextStatusBarText)
 	t_hpFrame.text:SetJustifyH("RIGHT")
 	t_hpFrame:RegisterEvent("PLAYER_TARGET_CHANGED")
-	t_hpFrame:RegisterEvent("UNIT_HEALTH")
+	t_hpFrame:SetScript("OnShow", registerOnShow)
+	t_hpFrame:SetScript("OnHide", unregisterOnHide)
 	t_hpFrame:SetScript("OnEvent", function(frame, _, unit)
 		if not unit or unit == "target" then
 			local hp = UnitHealth("target")
@@ -31,7 +35,8 @@ do
 	f_hpFrame.text:SetFontObject(TextStatusBarText)
 	f_hpFrame.text:SetJustifyH("RIGHT")
 	f_hpFrame:RegisterEvent("PLAYER_FOCUS_CHANGED")
-	f_hpFrame:RegisterEvent("UNIT_HEALTH")
+	f_hpFrame:SetScript("OnShow", registerOnShow)
+	f_hpFrame:SetScript("OnHide", unregisterOnHide)
 	f_hpFrame:SetScript("OnEvent", function(frame, _, unit)
 		if not unit or unit == "focus" then
 			local hp = UnitHealth("focus")
@@ -52,16 +57,15 @@ do
 	b1_hpFrame.text:SetAllPoints(b1_hpFrame)
 	b1_hpFrame.text:SetFontObject(TextStatusBarText)
 	b1_hpFrame.text:SetJustifyH("RIGHT")
-	b1_hpFrame:RegisterEvent("UNIT_HEALTH")
-	b1_hpFrame:SetScript("OnEvent", function(frame, _, unit)
-		if unit == "boss1" then
-			local hp = UnitHealth(unit)
-			if hp > 0 then
-				hp = hp / UnitHealthMax(unit) * 100
-				frame.text:SetFormattedText("%.1f%%", hp)
-			else
-				frame.text:SetText("0%")
-			end
+	b1_hpFrame:SetScript("OnShow", registerOnShow)
+	b1_hpFrame:SetScript("OnHide", unregisterOnHide)
+	b1_hpFrame:SetScript("OnEvent", function(frame)
+		local hp = UnitHealth("boss1")
+		if hp > 0 then
+			hp = hp / UnitHealthMax("boss1") * 100
+			frame.text:SetFormattedText("%.1f%%", hp)
+		else
+			frame.text:SetText("0%")
 		end
 	end)
 
@@ -73,16 +77,15 @@ do
 	b2_hpFrame.text:SetAllPoints(b2_hpFrame)
 	b2_hpFrame.text:SetFontObject(TextStatusBarText)
 	b2_hpFrame.text:SetJustifyH("RIGHT")
-	b2_hpFrame:RegisterEvent("UNIT_HEALTH")
-	b2_hpFrame:SetScript("OnEvent", function(frame, _, unit)
-		if unit == "boss2" then
-			local hp = UnitHealth(unit)
-			if hp > 0 then
-				hp = hp / UnitHealthMax(unit) * 100
-				frame.text:SetFormattedText("%.1f%%", hp)
-			else
-				frame.text:SetText("0%")
-			end
+	b2_hpFrame:SetScript("OnShow", registerOnShow)
+	b2_hpFrame:SetScript("OnHide", unregisterOnHide)
+	b2_hpFrame:SetScript("OnEvent", function(frame)
+		local hp = UnitHealth("boss2")
+		if hp > 0 then
+			hp = hp / UnitHealthMax("boss2") * 100
+			frame.text:SetFormattedText("%.1f%%", hp)
+		else
+			frame.text:SetText("0%")
 		end
 	end)
 
@@ -94,16 +97,15 @@ do
 	b3_hpFrame.text:SetAllPoints(b3_hpFrame)
 	b3_hpFrame.text:SetFontObject(TextStatusBarText)
 	b3_hpFrame.text:SetJustifyH("RIGHT")
-	b3_hpFrame:RegisterEvent("UNIT_HEALTH")
-	b3_hpFrame:SetScript("OnEvent", function(frame, _, unit)
-		if unit == "boss3" then
-			local hp = UnitHealth(unit)
-			if hp > 0 then
-				hp = hp / UnitHealthMax(unit) * 100
-				frame.text:SetFormattedText("%.1f%%", hp)
-			else
-				frame.text:SetText("0%")
-			end
+	b3_hpFrame:SetScript("OnShow", registerOnShow)
+	b3_hpFrame:SetScript("OnHide", unregisterOnHide)
+	b3_hpFrame:SetScript("OnEvent", function(frame)
+		local hp = UnitHealth("boss3")
+		if hp > 0 then
+			hp = hp / UnitHealthMax("boss3") * 100
+			frame.text:SetFormattedText("%.1f%%", hp)
+		else
+			frame.text:SetText("0%")
 		end
 	end)
 
@@ -115,16 +117,15 @@ do
 	b4_hpFrame.text:SetAllPoints(b4_hpFrame)
 	b4_hpFrame.text:SetFontObject(TextStatusBarText)
 	b4_hpFrame.text:SetJustifyH("RIGHT")
-	b4_hpFrame:RegisterEvent("UNIT_HEALTH")
-	b4_hpFrame:SetScript("OnEvent", function(frame, _, unit)
-		if unit == "boss4" then
-			local hp = UnitHealth(unit)
-			if hp > 0 then
-				hp = hp / UnitHealthMax(unit) * 100
-				frame.text:SetFormattedText("%.1f%%", hp)
-			else
-				frame.text:SetText("0%")
-			end
+	b4_hpFrame:SetScript("OnShow", registerOnShow)
+	b4_hpFrame:SetScript("OnHide", unregisterOnHide)
+	b4_hpFrame:SetScript("OnEvent", function(frame)
+		local hp = UnitHealth("boss4")
+		if hp > 0 then
+			hp = hp / UnitHealthMax("boss4") * 100
+			frame.text:SetFormattedText("%.1f%%", hp)
+		else
+			frame.text:SetText("0%")
 		end
 	end)
 end

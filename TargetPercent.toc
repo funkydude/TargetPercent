@@ -1,5 +1,5 @@
 ## Interface: 40000
-## Version: 1.50
+## Version: 1.55
 ## Title: TargetPercent
 ## Notes: Adds a health percentage to the Blizzard target, focus & boss frames.
 ## Author: Funkydude

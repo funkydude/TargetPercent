@@ -12,9 +12,9 @@ do
 	t_hpFrame:RegisterEvent("UNIT_HEALTH")
 	t_hpFrame:SetScript("OnEvent", function(frame, _, unit)
 		if not unit or unit == "target" then
-			local hp = UnitHealth(unit)
+			local hp = UnitHealth("target")
 			if hp > 0 then
-				hp = hp / UnitHealthMax(unit) * 100
+				hp = hp / UnitHealthMax("target") * 100
 				frame.text:SetFormattedText("%.1f%%", hp)
 			else
 				frame.text:SetText("0%")
@@ -34,9 +34,9 @@ do
 	f_hpFrame:RegisterEvent("UNIT_HEALTH")
 	f_hpFrame:SetScript("OnEvent", function(frame, _, unit)
 		if not unit or unit == "focus" then
-			local hp = UnitHealth(unit)
+			local hp = UnitHealth("focus")
 			if hp > 0 then
-				hp = hp / UnitHealthMax(unit) * 100
+				hp = hp / UnitHealthMax("focus") * 100
 				frame.text:SetFormattedText("%.1f%%", hp)
 			else
 				frame.text:SetText("0%")

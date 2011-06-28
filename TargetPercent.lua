@@ -19,7 +19,7 @@ end
 
 local t_hpFrame = CreateFrame("Frame", "TargetPercent", TargetFrameHealthBar)
 t_hpFrame:SetPoint("LEFT", TargetFrameHealthBar, "LEFT", -46, 0)
-t_hpFrame:SetWidth(45)
+t_hpFrame:SetWidth(50)
 t_hpFrame:SetHeight(20)
 t_hpFrame.text = t_hpFrame:CreateFontString("TargetPercentText", "OVERLAY")
 t_hpFrame.text:SetAllPoints(t_hpFrame)
@@ -39,7 +39,7 @@ t_hpFrame.target = "target"
 
 local f_hpFrame = CreateFrame("Frame", "FocusPercent", FocusFrameHealthBar)
 f_hpFrame:SetPoint("LEFT", FocusFrameHealthBar, "LEFT", -46, 0)
-f_hpFrame:SetWidth(45)
+f_hpFrame:SetWidth(50)
 f_hpFrame:SetHeight(20)
 f_hpFrame.text = f_hpFrame:CreateFontString("FocusPercentText", "OVERLAY")
 f_hpFrame.text:SetAllPoints(f_hpFrame)
@@ -69,7 +69,7 @@ end
 
 local b1_hpFrame = CreateFrame("Frame", "Boss1Percent", Boss1TargetFrameHealthBar)
 b1_hpFrame:SetPoint("LEFT", Boss1TargetFrameHealthBar, "LEFT", -46, 0)
-b1_hpFrame:SetWidth(45)
+b1_hpFrame:SetWidth(50)
 b1_hpFrame:SetHeight(20)
 b1_hpFrame.text = b1_hpFrame:CreateFontString("Boss1PercentText", "OVERLAY")
 b1_hpFrame.text:SetAllPoints(b1_hpFrame)
@@ -88,7 +88,7 @@ b1_hpFrame.target = "boss1"
 
 local b2_hpFrame = CreateFrame("Frame", "Boss2Percent", Boss2TargetFrameHealthBar)
 b2_hpFrame:SetPoint("LEFT", Boss2TargetFrameHealthBar, "LEFT", -46, 0)
-b2_hpFrame:SetWidth(45)
+b2_hpFrame:SetWidth(50)
 b2_hpFrame:SetHeight(20)
 b2_hpFrame.text = b2_hpFrame:CreateFontString("Boss2PercentText", "OVERLAY")
 b2_hpFrame.text:SetAllPoints(b2_hpFrame)
@@ -107,7 +107,7 @@ b2_hpFrame.target = "boss2"
 
 local b3_hpFrame = CreateFrame("Frame", "Boss3Percent", Boss3TargetFrameHealthBar)
 b3_hpFrame:SetPoint("LEFT", Boss3TargetFrameHealthBar, "LEFT", -46, 0)
-b3_hpFrame:SetWidth(45)
+b3_hpFrame:SetWidth(50)
 b3_hpFrame:SetHeight(20)
 b3_hpFrame.text = b3_hpFrame:CreateFontString("Boss3PercentText", "OVERLAY")
 b3_hpFrame.text:SetAllPoints(b3_hpFrame)
@@ -126,7 +126,7 @@ b3_hpFrame.target = "boss3"
 
 local b4_hpFrame = CreateFrame("Frame", "Boss4Percent", Boss4TargetFrameHealthBar)
 b4_hpFrame:SetPoint("LEFT", Boss4TargetFrameHealthBar, "LEFT", -46, 0)
-b4_hpFrame:SetWidth(45)
+b4_hpFrame:SetWidth(50)
 b4_hpFrame:SetHeight(20)
 b4_hpFrame.text = b4_hpFrame:CreateFontString("Boss4PercentText", "OVERLAY")
 b4_hpFrame.text:SetAllPoints(b4_hpFrame)

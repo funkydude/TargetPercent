@@ -106,7 +106,7 @@ addon.boss3:SetMovable(true)
 addon.boss3:SetScript("OnDragStart", startDrag)
 addon.boss3:SetScript("OnDragStop", stopDrag)
 addon.boss3:SetScript("OnEvent", healthUpdate)
-addon.boss2:SetScript("OnShow", healthUpdate)
+addon.boss3:SetScript("OnShow", healthUpdate)
 addon.boss3.unit = "boss3"
 addon.boss3:RegisterEvent("INSTANCE_ENCOUNTER_ENGAGE_UNIT")
 addon.boss3:RegisterUnitEvent("UNIT_HEALTH_FREQUENT", "boss3")

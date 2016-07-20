@@ -1,4 +1,4 @@
-## Interface: 60200
+## Interface: 70000
 ## Title: TargetPercent
 ## Notes: Adds a health percentage to the Blizzard target, focus & boss frames.
 ## Author: Funkydude

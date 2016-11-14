@@ -1,9 +1,22 @@
 ## Interface: 70100
+## Version: @project-version@
 ## Title: TargetPercent
 ## Notes: Adds a health percentage to the Blizzard target, focus & boss frames.
+## Notes-deDE: Adds a health percentage to the Blizzard target, focus & boss frames.
+## Notes-ruRU: Adds a health percentage to the Blizzard target, focus & boss frames.
+## Notes-zhCN: Adds a health percentage to the Blizzard target, focus & boss frames.
+## Notes-zhTW: Adds a health percentage to the Blizzard target, focus & boss frames.
+## Notes-koKR: Adds a health percentage to the Blizzard target, focus & boss frames.
+## Notes-frFR: Adds a health percentage to the Blizzard target, focus & boss frames.
+## Notes-esES: Adds a health percentage to the Blizzard target, focus & boss frames.
+## Notes-esMX: Adds a health percentage to the Blizzard target, focus & boss frames.
+## Notes-ptBR: Adds a health percentage to the Blizzard target, focus & boss frames.
+## Notes-itIT: Adds a health percentage to the Blizzard target, focus & boss frames.
 ## Author: Funkydude
 ## X-Category: Unit Frames
-## X-License: All Rights Reserved
+## X-License: All Rights Reserved: You are free to fork and modify on GitHub, please ask us about anything else.
+## X-Curse-Project-ID: targetpercent
+## X-WoWI-ID: 15903
 
 TargetPercent.lua
 

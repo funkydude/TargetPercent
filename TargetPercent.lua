@@ -11,7 +11,11 @@ local healthUpdate = function(frame, _, unit)
 	local hp = UnitHealth(unit)
 	if hp > 0 then
 		hp = hp / UnitHealthMax(unit) * 100
-		addon[unit]:SetFormattedText("%.1f%%", hp)
+		if hp == 100 then
+			addon[unit]:SetText("100%")
+		else
+			addon[unit]:SetFormattedText("%.1f%%", hp)
+		end
 	else
 		addon[unit]:SetText("0%")
 	end

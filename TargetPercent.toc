@@ -2,7 +2,7 @@
 ## Version: @project-version@
 ## Title: TargetPercent
 ## Notes: Adds a health percentage to the Blizzard target, focus & boss frames.
-## Notes-deDE: Adds a health percentage to the Blizzard target, focus & boss frames.
+## Notes-deDE: Fügt den Ziel-, Fokus- und Bossrahmen eine prozentuale Lebensanzeige hinzu.
 ## Notes-ruRU: Adds a health percentage to the Blizzard target, focus & boss frames.
 ## Notes-zhCN: Adds a health percentage to the Blizzard target, focus & boss frames.
 ## Notes-zhTW: Adds a health percentage to the Blizzard target, focus & boss frames.

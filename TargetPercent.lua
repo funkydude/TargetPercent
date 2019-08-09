@@ -1,4 +1,9 @@
 
+if WOW_PROJECT_ID ~= WOW_PROJECT_CLASSIC then
+	print("|cFF33FF99TargetPercent|r: You're trying to run the Classic version of TargetPercent on a live server.")
+	return
+end
+
 local name, addon = ...
 
 local startDrag = function(frame) if IsAltKeyDown() then frame:StartMoving() end end
@@ -38,24 +43,6 @@ target:RegisterUnitEvent("UNIT_HEALTH_FREQUENT", "target")
 addon.target = target:CreateFontString(nil, nil, "TextStatusBarText")
 addon.target:SetAllPoints(target)
 addon.target:SetJustifyH("RIGHT")
-
-local focus = CreateFrame("Frame", "FocusPercent", FocusFrameHealthBar)
-focus:SetPoint("LEFT", FocusFrameHealthBar, "LEFT", -51, 0)
-focus:SetWidth(50)
-focus:SetHeight(20)
-focus:EnableMouse(true)
-focus:RegisterForDrag("LeftButton")
-focus:SetClampedToScreen(true)
-focus:SetMovable(true)
-focus:SetScript("OnDragStart", startDrag)
-focus:SetScript("OnDragStop", stopDrag)
-focus:SetScript("OnEvent", healthUpdate)
-focus.unit = "focus"
-focus:RegisterEvent("PLAYER_FOCUS_CHANGED")
-focus:RegisterUnitEvent("UNIT_HEALTH_FREQUENT", "focus")
-addon.focus = focus:CreateFontString(nil, nil, "TextStatusBarText")
-addon.focus:SetAllPoints(focus)
-addon.focus:SetJustifyH("RIGHT")
 
 for i = 1, 5 do
 	local boss, Boss = ("boss%d"):format(i), ("Boss%d"):format(i)

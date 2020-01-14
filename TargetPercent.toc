@@ -1,4 +1,4 @@
-## Interface: 11302
+## Interface: 11303
 ## Version: @project-version@
 ## Title: TargetPercent
 ## Notes: Adds a health percentage to the Blizzard target, focus & boss frames.
@@ -16,7 +16,7 @@
 ## X-Category: Unit Frames
 ## X-License: All Rights Reserved: You are free to fork and modify on GitHub, please ask us about anything else.
 ## X-Curse-Project-ID: 22140
-# X-WoWI-ID: 15903
+## X-WoWI-ID: 15903
 
 TargetPercent.lua
 

@@ -1,6 +1,6 @@
 
 if WOW_PROJECT_ID ~= WOW_PROJECT_CLASSIC then
-	print("|cFF33FF99TargetPercent|r: You're trying to run the Classic version of TargetPercent on a live server.")
+	print("|cFF33FF99TargetPercent|r: ERROR. You have installed TargetPercent for WoW Classic, please install the correct version.")
 	return
 end
 

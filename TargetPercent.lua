@@ -1,9 +1,4 @@
 
-if WOW_PROJECT_ID == WOW_PROJECT_CLASSIC then
-	print("|cFF33FF99TargetPercent|r: ERROR. You have installed TargetPercent for WoW Retail, please install the correct version.")
-	return
-end
-
 local name, addon = ...
 
 local startDrag = function(frame) if IsAltKeyDown() then frame:StartMoving() end end

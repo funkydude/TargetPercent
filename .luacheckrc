@@ -8,6 +8,4 @@ globals = {
 	"TargetFrameHealthBar",
 	"UnitHealth",
 	"UnitHealthMax",
-	"WOW_PROJECT_ID",
-	"WOW_PROJECT_CLASSIC",
 }

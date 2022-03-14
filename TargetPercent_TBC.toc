@@ -18,5 +18,5 @@
 ## X-Curse-Project-ID: 22140
 ## X-WoWI-ID: 15903
 
-TargetPercent.lua
+TargetPercent_TBC.lua
 

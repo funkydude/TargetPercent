@@ -17,6 +17,7 @@
 ## X-License: All Rights Reserved: You are free to fork and modify on GitHub, please ask us about anything else.
 ## X-Curse-Project-ID: 22140
 ## X-WoWI-ID: 15903
+## X-Wago-ID: J96E186g
 
 TargetPercent.lua
 

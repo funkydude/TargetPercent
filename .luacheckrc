@@ -1,11 +1,15 @@
 std = "lua51"
 max_line_length = false
 codes = true
-globals = {
+read_globals = {
 	"CreateFrame",
 	"FocusFrameHealthBar",
 	"IsAltKeyDown",
 	"TargetFrameHealthBar",
 	"UnitHealth",
 	"UnitHealthMax",
+
+	-- Dragonflight
+	"TargetFrame",
+	"FocusFrame",
 }

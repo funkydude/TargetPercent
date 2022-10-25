@@ -21,8 +21,8 @@ local healthUpdate = function(frame, _, unit)
 	end
 end
 
-local target = CreateFrame("Frame", name, TargetFrameHealthBar)
-target:SetPoint("LEFT", TargetFrameHealthBar, "LEFT", -51, 0)
+local target = CreateFrame("Frame", name, TargetFrameHealthBar or TargetFrame.healthbar)
+target:SetPoint("LEFT", TargetFrameHealthBar or TargetFrame.healthbar, "LEFT", -51, 0)
 target:SetWidth(50)
 target:SetHeight(20)
 target:EnableMouse(true)
@@ -39,8 +39,8 @@ addon.target = target:CreateFontString(nil, nil, "TextStatusBarText")
 addon.target:SetAllPoints(target)
 addon.target:SetJustifyH("RIGHT")
 
-local focus = CreateFrame("Frame", "FocusPercent", FocusFrameHealthBar)
-focus:SetPoint("LEFT", FocusFrameHealthBar, "LEFT", -51, 0)
+local focus = CreateFrame("Frame", "FocusPercent", FocusFrameHealthBar or FocusFrame.healthbar)
+focus:SetPoint("LEFT", FocusFrameHealthBar or FocusFrame.healthbar, "LEFT", -51, 0)
 focus:SetWidth(50)
 focus:SetHeight(20)
 focus:EnableMouse(true)
@@ -59,8 +59,8 @@ addon.focus:SetJustifyH("RIGHT")
 
 for i = 1, 5 do
 	local boss, Boss = ("boss%d"):format(i), ("Boss%d"):format(i)
-	local bossFrame = CreateFrame("Frame", Boss.."Percent", _G[Boss.."TargetFrameHealthBar"])
-	bossFrame:SetPoint("LEFT", _G[Boss.."TargetFrameHealthBar"], "LEFT", -51, 0)
+	local bossFrame = CreateFrame("Frame", Boss.."Percent", _G[Boss.."TargetFrameHealthBar"] or _G[Boss.."TargetFrame"].healthbar)
+	bossFrame:SetPoint("LEFT", _G[Boss.."TargetFrameHealthBar"] or _G[Boss.."TargetFrame"].healthbar, "LEFT", -51, 0)
 	bossFrame:SetWidth(50)
 	bossFrame:SetHeight(20)
 	bossFrame:EnableMouse(true)

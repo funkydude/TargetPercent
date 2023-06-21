@@ -8,4 +8,8 @@ read_globals = {
 	"UnitHealthMax",
 	"TargetFrame",
 	"FocusFrame",
+
+	-- Classic
+	"FocusFrameHealthBar",
+	"TargetFrameHealthBar",
 }

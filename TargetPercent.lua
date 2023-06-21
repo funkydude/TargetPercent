@@ -21,8 +21,8 @@ local healthUpdate = function(frame, _, unit)
 	end
 end
 
-local target = CreateFrame("Frame", name, TargetFrameHealthBar or TargetFrame.healthbar)
-target:SetPoint("LEFT", TargetFrameHealthBar or TargetFrame.healthbar, "LEFT", -51, 0)
+local target = CreateFrame("Frame", name, TargetFrame.healthbar)
+target:SetPoint("LEFT", TargetFrame.healthbar, "LEFT", -51, 0)
 target:SetWidth(50)
 target:SetHeight(20)
 target:EnableMouse(true)
@@ -39,8 +39,8 @@ addon.target = target:CreateFontString(nil, nil, "TextStatusBarText")
 addon.target:SetAllPoints(target)
 addon.target:SetJustifyH("RIGHT")
 
-local focus = CreateFrame("Frame", "FocusPercent", FocusFrameHealthBar or FocusFrame.healthbar)
-focus:SetPoint("LEFT", FocusFrameHealthBar or FocusFrame.healthbar, "LEFT", -51, 0)
+local focus = CreateFrame("Frame", "FocusPercent", FocusFrame.healthbar)
+focus:SetPoint("LEFT", FocusFrame.healthbar, "LEFT", -51, 0)
 focus:SetWidth(50)
 focus:SetHeight(20)
 focus:EnableMouse(true)
@@ -58,9 +58,10 @@ addon.focus:SetAllPoints(focus)
 addon.focus:SetJustifyH("RIGHT")
 
 for i = 1, 5 do
-	local boss, Boss = ("boss%d"):format(i), ("Boss%d"):format(i)
-	local bossFrame = CreateFrame("Frame", Boss.."Percent", _G[Boss.."TargetFrameHealthBar"] or _G[Boss.."TargetFrame"].healthbar)
-	bossFrame:SetPoint("LEFT", _G[Boss.."TargetFrameHealthBar"] or _G[Boss.."TargetFrame"].healthbar, "LEFT", -51, 0)
+	local bossUnit = ("boss%d"):format(i)
+	local bossTargetFrame = ("Boss%dTargetFrame"):format(i)
+	local bossFrame = CreateFrame("Frame", bossTargetFrame.."Percent", _G[bossTargetFrame].healthbar)
+	bossFrame:SetPoint("LEFT", _G[bossTargetFrame].healthbar, "LEFT", -51, 0)
 	bossFrame:SetWidth(50)
 	bossFrame:SetHeight(20)
 	bossFrame:EnableMouse(true)
@@ -71,11 +72,11 @@ for i = 1, 5 do
 	bossFrame:SetScript("OnDragStop", stopDrag)
 	bossFrame:SetScript("OnEvent", healthUpdate)
 	bossFrame:SetScript("OnShow", healthUpdate)
-	bossFrame.unit = boss
+	bossFrame.unit = bossUnit
 	bossFrame:RegisterEvent("INSTANCE_ENCOUNTER_ENGAGE_UNIT")
-	bossFrame:RegisterUnitEvent("UNIT_HEALTH", boss)
-	addon[boss] = bossFrame:CreateFontString(nil, nil, "TextStatusBarText")
-	addon[boss]:SetAllPoints(bossFrame)
-	addon[boss]:SetJustifyH("RIGHT")
+	bossFrame:RegisterUnitEvent("UNIT_HEALTH", bossUnit)
+	addon[bossUnit] = bossFrame:CreateFontString(nil, nil, "TextStatusBarText")
+	addon[bossUnit]:SetAllPoints(bossFrame)
+	addon[bossUnit]:SetJustifyH("RIGHT")
 end
 

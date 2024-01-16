@@ -19,5 +19,5 @@
 ## X-WoWI-ID: 15903
 ## X-Wago-ID: J96E186g
 
-TargetPercent_Vanilla.lua
+TargetPercent.lua
 

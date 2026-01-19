@@ -5,4 +5,5 @@
 * Movable with ALT-drag if you dislike the default positions.
 
 ## Download
-https://www.curseforge.com/wow/addons/targetpercent
+* <https://www.curseforge.com/wow/addons/targetpercent>
+* <https://addons.wago.io/addons/targetpercent>

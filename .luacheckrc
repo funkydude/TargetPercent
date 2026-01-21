@@ -2,14 +2,17 @@ std = "lua51"
 max_line_length = false
 codes = true
 read_globals = {
+	"AbbreviateNumbers",
+	"C_CurveUtil",
 	"CreateFrame",
-	"IsAltKeyDown",
-	"UnitHealth",
-	"UnitHealthMax",
-	"TargetFrame",
 	"FocusFrame",
+	"IsAltKeyDown",
+	"TargetFrame",
+	"UnitHealthPercent",
 
 	-- Classic
 	"FocusFrameHealthBar",
 	"TargetFrameHealthBar",
+	"UnitHealth",
+	"UnitHealthMax",
 }

@@ -4,20 +4,42 @@ local name, addon = ...
 local startDrag = function(frame) if IsAltKeyDown() then frame:StartMoving() end end
 local stopDrag = function(frame) frame:StopMovingOrSizing() end
 
-local UnitHealth, UnitHealthMax = UnitHealth, UnitHealthMax
+local healthUpdate
 
-local healthUpdate = function(frame, _, unit)
-	unit = unit or frame.unit
-	local hp = UnitHealth(unit)
-	if hp > 0 then
-		hp = hp / UnitHealthMax(unit) * 100
-		if hp == 100 then
-			addon[unit]:SetText("100%")
+if C_CurveUtil and C_CurveUtil.CreateCurve and UnitHealthPercent then
+	local curveScaleTo100 = C_CurveUtil.CreateCurve()
+	curveScaleTo100:SetType(0) -- Enum.LuaCurveType.Linear
+	curveScaleTo100:AddPoint(0.0, 0)
+	curveScaleTo100:AddPoint(1.0, 100)
+	local abbrevTable = {
+		breakpointData = {
+			{breakpoint = 100, fractionDivisor = 1, significandDivisor = 1, abbreviation = "", abbreviationIsGlobal = false},
+			{breakpoint = 0.0000001, fractionDivisor = 10, significandDivisor = 1/10, abbreviation = "", abbreviationIsGlobal = false},
+			{breakpoint = 0, fractionDivisor = 1, significandDivisor = 1, abbreviation = "", abbreviationIsGlobal = false},
+		},
+	}
+	local AbbreviateNumbers, UnitHealthPercent = AbbreviateNumbers, UnitHealthPercent
+	healthUpdate = function(frame, _, unit)
+		unit = unit or frame.unit
+		local hp = UnitHealthPercent(unit, nil, curveScaleTo100)
+		local trimmedHp = AbbreviateNumbers(hp, abbrevTable)
+		addon[unit]:SetFormattedText("%s%%", trimmedHp)
+	end
+else
+	local UnitHealth, UnitHealthMax = UnitHealth, UnitHealthMax
+	healthUpdate = function(frame, _, unit)
+		unit = unit or frame.unit
+		local hp = UnitHealth(unit)
+		if hp > 0 then
+			hp = hp / UnitHealthMax(unit) * 100
+			if hp == 100 then
+				addon[unit]:SetText("100%")
+			else
+				addon[unit]:SetFormattedText("%.1f%%", hp)
+			end
 		else
-			addon[unit]:SetFormattedText("%.1f%%", hp)
+			addon[unit]:SetText("0%")
 		end
-	else
-		addon[unit]:SetText("0%")
 	end
 end
 

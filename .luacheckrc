@@ -9,10 +9,4 @@ read_globals = {
 	"IsAltKeyDown",
 	"TargetFrame",
 	"UnitHealthPercent",
-
-	-- Classic
-	"FocusFrameHealthBar",
-	"TargetFrameHealthBar",
-	"UnitHealth",
-	"UnitHealthMax",
 }
